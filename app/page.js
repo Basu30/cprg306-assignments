@@ -5,7 +5,8 @@ export default function Home() {
   return ( 
   <main>
     <StudentInfo/>
-    <Link href="week2">week2</Link>
+    <Link href="week2">week2</Link><br/>
+    <Link href="week3">week3</Link>
  </main> 
   )
 }
