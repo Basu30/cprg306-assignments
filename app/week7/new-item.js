@@ -39,10 +39,10 @@ export default function NewItem({onAddItem}) {
 
     return (
         <main className="flex justify-center w-full">      
-            <form className="p-4 m-4 bg-green-900 text-black max-w-sm w-full rounded-xl " onSubmit={handleSubmit}>
+            <form className="p-2 m-4 bg-slate-900 text-black max-w-sm w-full" onSubmit={handleSubmit}>
                 <div>                   
                     <input
-                        className="form-input mt-1 border-2 w-full rounded-xl p-2"
+                        className="form-input mt-1 border-2 w-full rounded-lg p-2"
                         placeholder="Item name" required                      
                         value={name}
                         onChange={handleChangeName}
@@ -50,13 +50,13 @@ export default function NewItem({onAddItem}) {
                 </div>
                 <div className="flex justify-between">                  
                     <input
-                        className="form-input mt-2 w-20 rounded-xl p-2" 
+                        className="form-input mt-2 w-20 rounded p-2" 
                         type="number" min="1" max="99" required                                         
                         value={quantity}
                         onChange={handleChangeQuantity}
                     />              
                     <select
-                        className="ml-1 mt-2 w-40 rounded-xl p-2 "
+                        className="ml-1 mt-2 w-40 rounded-lg p-2 "
                         value={category}
                         onChange={handleChangeCategory}
                     >
@@ -75,7 +75,7 @@ export default function NewItem({onAddItem}) {
                 </div>
               <button 
                 type="submit" 
-                className=" w-full mt-4 px-4 shadow-md py-2 focus:outline-none focus:ring-opacity-75 focus:ring-2 focus:ring-blue-400 bg-blue-500 hover:bg-blue-700 rounded-xl text-white">+</button>
+                className="btn w-full mt-4 px-4 shadow-md py-2 focus:outline-none focus:ring-opacity-75 focus:ring-2 focus:ring-blue-400 bg-blue-500 hover:bg-blue-700 rounded-lg text-white">+</button>
             </form>       
         </main>
     )

@@ -1,74 +1,74 @@
 [
     {
       "id": "1h2GJKH12gkHG31h1H",
-      "name": "Milk, 4 L 🥛",
+      "name": "milk, 4 L 🥛",
       "quantity": 1,
-      "category": "Dairy"
+      "category": "dairy"
     },
     {
       "id": "2KJH3k2j3H1k2J3K1H",
-      "name": "Bread 🍞",
+      "name": "bread 🍞",
       "quantity": 2,
-      "category": "Bakery"
+      "category": "bakery"
     },
     {
       "id": "3h2KJH3k2j3H1k2J3",
-      "name": "Eggs, Dozen 🥚",
+      "name": "eggs, dozen 🥚",
       "quantity": 2,
-      "category": "Dairy"
+      "category": "dairy"
     },
     {
       "id": "4k2J3K1H2GJKH12gk",
-      "name": "Bananas 🍌",
+      "name": "bananas 🍌",
       "quantity": 6,
-      "category": "Produce"
+      "category": "produce"
     },
     {
       "id": "5H1h1H2KJH3k2j3H",
-      "name": "Broccoli 🥦",
+      "name": "broccoli 🥦",
       "quantity": 3,
-      "category": "Produce"
+      "category": "produce"
     },
     {
       "id": "6H1k2J3K1H2GJKH1",
-      "name": "Chicken breasts, 1 kg 🍗",
+      "name": "chicken breasts, 1 kg 🍗",
       "quantity": 1,
-      "category": "Meat"
+      "category": "meat"
     },
     {
       "id": "7gkHG31h1H2KJH3k",
-      "name": "Pasta sauce 🍝",
+      "name": "pasta sauce 🍝",
       "quantity": 3,
-      "category": "Canned goods"
+      "category": "canned goods"
     },
     {
       "id": "8j3H1k2J3K1H2GJK",
-      "name": "Spaghetti, 454 g 🍝",
+      "name": "spaghetti, 454 g 🍝",
       "quantity": 2,
-      "category": "Dry goods"
+      "category": "dry goods"
     },
     {
       "id": "9H12gkHG31h1H2KJ",
-      "name": "Toilet paper, 12 pack 🧻",
+      "name": "toilet paper, 12 pack 🧻",
       "quantity": 1,
-      "category": "Household"
+      "category": "household"
     },
     {
       "id": "10H3k2j3H1k2J3K1",
-      "name": "Paper towels, 6 pack",
+      "name": "paper towels, 6 pack",
       "quantity": 1,
-      "category": "Household"
+      "category": "household"
     },
     {
       "id": "11k2J3K1H2GJKH12",
-      "name": "Dish soap 🍽️",
+      "name": "dish soap 🍽️",
       "quantity": 1,
-      "category": "Household"
+      "category": "household"
     },
     {
       "id": "12GJKH12gkHG31h1",
-      "name": "Hand soap 🧼",
+      "name": "hand soap 🧼",
       "quantity": 4,
-      "category": "Household"
+      "category": "household"
     }
   ]

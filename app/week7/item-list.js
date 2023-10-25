@@ -27,15 +27,14 @@ export default function ItemList({items}){
     return(
       <div>
         <div className="flex-1" >
-          <label className="m-6 text-red-900">Sort by: </label>      
-            <button className=" bg-green-900 p-2 m-4 w-36 rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-opacity-75 hover:bg-green-700 text-white"  onClick={(e) => setSortBy(e.target.value)} value="name">Name</button>
-            <button  className="bg-blue-900 p-2 m-4 w-36 rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-opacity-75 hover:bg-blue-700 text-white"  onClick={(e) => setSortBy(e.target.value)} value="category">Category</button>  
+          <label>Sort by: </label>      
+            <button className="bg-green-900 p-1 m-2 w-28 rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-opacity-75 hover:bg-green-700"  onClick={(e) => setSortBy(e.target.value)} value="name">Name</button>
+            <button  className="bg-blue-900 p-1 m-2 w-28 rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-opacity-75 hover:bg-blue-700"  onClick={(e) => setSortBy(e.target.value)} value="category">Category</button>  
         </div>
           
         <div className="flex flex-wrap">
           {itemData.map((item) => (
-            <Item key={item.name} {...item} />
-          ))}
+            <Item key={item.name} {...item} />))}
         </div>
       </div>
     )

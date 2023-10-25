@@ -15,8 +15,8 @@ export default function Page(){
     };
 
     return(
-        <main className="bg-sky-500">          
-            <h1 className="heading text-4xl font-bold text-white text-center">Shopping List</h1>
+        <main className="bg-slate-950">          
+            <h1 className="heading text-4xl font-bold">Shopping List</h1>
             <NewItem onAddItem={handleAddItem} />         
             <ItemList items={items} /> 
         </main>
