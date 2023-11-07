@@ -1,11 +1,12 @@
 "use client";
+
 import {useState} from "react";
 
 export default function NewItem() {
     const [name, setName] = useState("");
-    const [ quantity, setQuantity] = useState(1);
+    const [quantity, setQuantity] = useState(1);
     const [category, setCategory] = useState("produce");
-    
+    const [itemCreated, setItemCreated] = useState(false);
     
 
     const handleSubmit = (item) => {
@@ -24,8 +25,6 @@ export default function NewItem() {
         setName("");
         setQuantity(1);
         setCategory("produce");
-
-        const [itemCreated, setItemCreated] = useState(false);
     };
 
     const handleChangeName = (event) => {
