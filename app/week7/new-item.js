@@ -2,33 +2,28 @@
 
 import {useState} from "react";
 
-export default function NewItem() {
+export default function NewItem({onAddItem}) {
     const [name, setName] = useState("");
-    const [quantity, setQuantity] = useState(1);
+    const [ quantity, setQuantity] = useState(1);
     const [category, setCategory] = useState("produce");
-    const [itemCreated, setItemCreated] = useState(false);
     
-
-    const handleSubmit = (item) => {
-       
-        item.preventDefault();
+    const handleSubmit = (items) => {      
+        items.preventDefault();
         
         const newItem = {
             name: name,
             quantity: quantity,
             category: category,
-        }
-        console.log(newItem);
-        
-        setItemCreated(true);
+        };   
 
+        onAddItem(newItem);
+        
         setName("");
         setQuantity(1);
-        setCategory("produce");   
-
-       //const [itemCreated, setItemCreated] = useState(false);
+        setCategory("produce");
     };
 
+    
 
     const handleChangeName = (event) => {
         setName(event.target.value);
@@ -44,7 +39,7 @@ export default function NewItem() {
 
     return (
         <main className="flex justify-center w-full">      
-            <form className="p-2 m-4 bg-slate-900 text-black max-w-sm w-full" onSubmit={handleSubmit}>
+            <form className="p-4 m-4 bg-green-900 text-black max-w-sm w-full rounded-xl " onSubmit={handleSubmit}>
                 <div>                   
                     <input
                         className="form-input mt-1 border-2 w-full rounded-lg p-2"
@@ -83,5 +78,5 @@ export default function NewItem() {
                 className="btn w-full mt-4 px-4 shadow-md py-2 focus:outline-none focus:ring-opacity-75 focus:ring-2 focus:ring-blue-400 bg-blue-500 hover:bg-blue-700 rounded-lg text-white">+</button>
             </form>       
         </main>
-    );   
+    )  
 }
