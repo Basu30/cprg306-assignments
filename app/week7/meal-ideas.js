@@ -3,22 +3,29 @@
 
 import { useEffect, useState } from "react";
 
-async function fetchMealIdeas(ingredient){  
-    const response = await fetch (`https://www.themealdb.com/api/json/v1/1/filter.php?i=${ingredient}`); 
+
+async function fetchMealIdeas({ingredient}){  
+    try { 
+    const response = await fetch (`https://www.themealdb.com/api/json/v1/1/filter.php?i=${ingredient}`);   
     const data = await response.json();
-       return data.meals;   
+    return data 
+    } catch (error) {
+        console.error(error);
+    }
+    return [];
 }
+
 
 export default function MealIdeas({ingredient}){
     const [meals, setMeals] = useState([]);
      
     async function loadMealIdeas(){   
         try{ 
-           const mealsIdea = await fetchMealIdeas(ingredient);
-           setMeals([mealsIdea]);
+           const mealsIdea = await fetchMealIdeas({ingredient});
+           setMeals([mealsIdea.meals]);
         }
         catch (error){
-           console.error("No meal ideas found for ", {ingredient});
+           console.error("Error ", error);
         }      
     };
    
@@ -27,13 +34,13 @@ export default function MealIdeas({ingredient}){
     }, [ingredient]);
 
     return (
-        <div className="p-2 absolute right-0 border-2 border-black">
+        <div className="p-2 border-1">
             <h2 className="border-black">Meal Ideas for {ingredient}</h2>          
             <ul>
                 {meals.map((meal) => ( 
-                <li key={meal.idMeal}>
-                    {meal.strMeal} 
-                    {meal.strMealThumb} 
+                <li key={meal.id}>
+                    <p>{meal.strMeal}</p>
+                    <img src={meal.strMealThumb} alt={meal.strMeal} />                   
                 </li> ))}
             </ul>
         </div>

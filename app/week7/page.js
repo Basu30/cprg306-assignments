@@ -23,14 +23,15 @@ export default function Page(){
 
     return(
         <main className="flex bg-sky-500">
-            <div className="flex font-bold text-white" >
-                <MealIdeas ingredient={selectedItemName} />
-            </div>
+            
            <div className="flex-1 w-96" >         
-               <h1 className="heading text-4xl font-bold text-white text-center font-serif">Shopping List</h1>
+               <h1 className="heading text-4xl font-bold text-white ml-16 font-serif">Shopping List</h1>
                 <NewItem onAddItem={handleAddItem} />         
                 <ItemList items={items} onItemSelect={handleItemSelect} />              
-            </div>          
+            </div>   
+            <div className="w-96 left-0 p-4 m-4 max-w-sm font-bold text-white" >
+                <MealIdeas ingredient={selectedItemName} />
+            </div>       
         </main>
     )
 }

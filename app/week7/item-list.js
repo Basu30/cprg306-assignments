@@ -26,7 +26,7 @@ export default function ItemList({items, onItemSelect}){
     return(
       <div>
         <div className="flex-1" >
-          <label className="m-6 text-red-900">Sort by: </label>      
+          <label className="m-6 font-bold text-red-900">Sort by: </label>      
             <button className="bg-green-900 p-1 m-2 w-28 rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-opacity-75 hover:bg-green-700"  onClick={(e) => setSortBy(e.target.value)} value="name">Name</button>
             <button  className="bg-blue-900 p-1 m-2 w-28 rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-opacity-75 hover:bg-blue-700"  onClick={(e) => setSortBy(e.target.value)} value="category">Category</button>  
         </div>
