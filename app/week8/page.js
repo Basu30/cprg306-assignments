@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { useUserAuth } from "./_utils/auth-context";
 
 export default function Page() {
@@ -19,10 +20,26 @@ export default function Page() {
     }
 }
 
+if(!user){
+    return (
+        <main>
+            <header>
+                <h1>Week 8</h1>
+                <h2>Shopping List</h2>
+            </header>
+            <section>
+                <button className="text-lg m-2 hover:underline"
+                onClick={handleGitHubSignIn}>Sign in</button>
+            </section>
+        </main>
+    )
+}
+
 return (
     <main>
         <header>
             <h1>Week 8</h1>
+            <h2>Shopping List</h2>
         </header>
         <section>
             {user ? (
@@ -37,7 +54,7 @@ return (
             )}
 
         </section>
-       
+       <Link href="/week8/shopping-list"> Welcome to Shopping List</Link>
     </main>
 
   )
