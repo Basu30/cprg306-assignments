@@ -12,8 +12,6 @@ async function fetchMealIdeas({ingredient}){
     } catch (error) {
         console.error(error);
     }
-    return[];
-
 }
 
 
