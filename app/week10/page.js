@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
-import { useUserAuth } from "./_utils/auth-context";
+
+import { useUserAuth } from "../_utils/auth-context";
 
 export default function Page() {
     const { user, gitHubSignIn, firebaseSignOut } = useUserAuth();
