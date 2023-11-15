@@ -43,7 +43,7 @@ export default function MealIdeas({ingredient}){
                     <p>{meal ? meal.strMeal : "error"}</p>
                     <img src={meal ? meal.strMealThumb : "error"} />                   
                 </li> ))}
-            </ul>
+            </ul>          
         </div>
     );
 }
