@@ -2,9 +2,11 @@
 
 import {useState} from 'react';
 import ItemList from './item-list.js';
-import itemData from './items.json';
 import NewItem from './new-item.js';
 import MealIdeas from './meal-ideas.js';
+import { getItems } from '../_services/shopping-list-service.js';
+import { addItem } from '../_services/shopping-list-service.js';
+import { useEffect } from 'react';
 
 export default function Page(){
     const [selectedItemName, setSelectedItemName] = useState("Name");
@@ -18,9 +20,36 @@ export default function Page(){
         setSelectedItemName(cleanedName);
     }
 
-    const handleAddItem = (newItem) => {
-        setItems([...items, newItem]);
+    const handleAddItem = async (newItem) => {
+        try{
+            const id = await addItem({userId: user.uid, item: newItem});
+            newItem.id = id;
+            setItems([...items, newItem]);
+        }
+        catch(error){
+            console.error("Error adding item", error);
+        }
     };
+
+    // const handleAddItem = (newItem) => {
+    //     setItems([...items, newItem]);
+    // };
+
+    
+    async function loadItems(){
+        try{
+            const items = await getItems({userId: user.uid});
+            setItems([...items]);
+        }
+        catch(error){
+            console.error("Error loading items", error);
+        }
+    };
+
+   
+    useEffect(() => {
+        loadItems();
+    }, []);
 
     return(
         <main className="flex bg-sky-500">
