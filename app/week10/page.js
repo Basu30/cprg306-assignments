@@ -25,7 +25,7 @@ if(!user){
     return (
         <main>
             <header>
-                <h1>Week 8</h1>
+                <h1>Week 10</h1>
                 <h2>Shopping List</h2>
             </header>
             <section>
@@ -39,7 +39,7 @@ if(!user){
 return (
     <main>
         <header>
-            <h1>Week 8</h1>
+            <h1>Week 10</h1>
             <h2>Shopping List</h2>
         </header>
         <section>
@@ -47,6 +47,7 @@ return (
                 <div>
                     <p>Welcome, {user.displayName}</p>                      
                     <img src={user.photoURL} className="w-8 h-8" />
+                    <p>Your user ID is: {user.uid}</p>
                     <button className="text-lg m-2 hover:underline" onClick={handleFirebaseSignOut}>Sign Out</button>
                 </div>
             ) : (

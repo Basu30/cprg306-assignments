@@ -7,12 +7,14 @@ import MealIdeas from './meal-ideas.js';
 import { getItems } from '../_services/shopping-list-service.js';
 import { addItem } from '../_services/shopping-list-service.js';
 import { useEffect } from 'react';
+import { useUserAuth } from '../_utils/auth-context.js';
 
 export default function Page(){
+
+    const {user} = useUserAuth();
     const [selectedItemName, setSelectedItemName] = useState("Name");
 
-    const [items, setItems] = useState(
-        itemData.map((items) => ({...items})));
+    const [items, setItems] = useState([]);
 
     const handleItemSelect = (name) => {
         const cleanedName = name.replace(/([\u2700-\u27BF]|[\uE000-\uF8FF]|\uD83C[\uDC00-\uDFFF]|\uD83D[\uDC00-\uDFFF]|[\u2011-\u26FF]|\uD83E[\uDD10-\uDDFF])/g, '');
@@ -48,8 +50,11 @@ export default function Page(){
 
    
     useEffect(() => {
-        loadItems();
-    }, []);
+        if(user){
+            getItems(user.uid, setItems);
+        } 
+        // loadItems();
+    }, [user]);
 
     return(
         <main className="flex bg-sky-500">
