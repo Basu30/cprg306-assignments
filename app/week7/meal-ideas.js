@@ -36,10 +36,10 @@ export default function MealIdeas({ingredient}){
         <div className="p-2 border-1">
             <h2 className="border-black">Meal Ideas for {ingredient}</h2>          
             <ul>
-                {meals.map((meal) => ( 
+                {meals.map((meal) => (                
                 <li key={meal.idMeal}>
-                    <p>{meal ? meal.strMeal : "error"}</p>
-                    <img src={meal ? meal.strMealThumb : "error"} />                   
+                    <p>{meal.strMeal}</p>
+                    <img src={meal.strMealThumb} />                   
                 </li> ))}
             </ul>          
         </div>
